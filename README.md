@@ -3,4 +3,4 @@ A simple To Do app using react
 
 I'm here for the Mozilla learning pathway:
 
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries/React_interactivity_filtering_conditional_rendering
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries/React_accessibility
