@@ -1,7 +1,7 @@
 import Todo from "./components/Todo";
 import Form from "./components/Form";
 import FilterButton from "./components/FilterButton";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { nanoid } from "nanoid";
 
 
@@ -11,8 +11,24 @@ function App(props) {
 
     const taskList = tasks?.map((task) => (
         <Todo id={task.id} name={task.name}
-            completed={task.completed} key={task.id} />
+            completed={task.completed} key={task.id} 
+            onCheck={toggleTaskCompleted}/>
     ));
+
+    function toggleTaskCompleted(id) {
+        const updatedTasks = tasks.map((task) => {
+            if (task.id === id) {
+            return {...task, completed: !task.completed};
+            }
+            return task;
+        })
+        setTasks(updatedTasks);
+    }
+    
+    useEffect(() => {
+        console.log(tasks);
+    });
+
 
     function addTask(name) {
         const newTask = {
