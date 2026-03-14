@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect } from "react";
+import usePrevious from "../usePrev/usePrevious";
 
 function Todo(props) {
     const [isEditing, setEditing] = useState(false);
@@ -8,14 +9,9 @@ function Todo(props) {
     const wasEditing = usePrevious(isEditing);
 
 
-    function usePrevious(value) {
-        const ref = useRef();
-        useEffect(() => {
-            ref.current = value;
-        });
-        return ref.current;
-    }
-
+    // function handleCheck(event) {
+    //     console.log(`an event is being passed: `)
+    // }
     function handleChange(e) {
         setNewName(e.target.value);
     }
@@ -63,7 +59,7 @@ function Todo(props) {
                     id={props.id}
                     type="checkbox"
                     defaultChecked={props.completed}
-                    onChange={() => props.toggleTaskCompleted(props.id)}
+                    onChange={() => props.onCheck(props.id)}
                 />
                 <label className="todo-label" htmlFor={props.id}>
                     {props.name}
@@ -80,7 +76,7 @@ function Todo(props) {
                 <button
                     type="button"
                     className="btn btn__danger"
-                    onClick={() => props.deleteTask(props.id)}>
+                    onClick={() => props.onDelete(props.id)}>
                     Delete <span className="visually-hidden">{props.name}</span>
                 </button>
             </div>

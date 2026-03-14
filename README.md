@@ -3,4 +3,4 @@ A simple To Do app using react
 
 I'm here for the Mozilla learning pathway:
 
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries/React_accessibility#focusing_when_the_user_deletes_a_task
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries/React_resources
